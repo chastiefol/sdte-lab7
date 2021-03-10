@@ -1,0 +1,7 @@
+- hosts: web
+  tasks:
+    - name: "replace website content"
+      replace:
+        path: /var/www/default/index.html
+        regexp: "About me"
+        replace: "Host : <b> #{{ inventory_hostname }} </b>"
